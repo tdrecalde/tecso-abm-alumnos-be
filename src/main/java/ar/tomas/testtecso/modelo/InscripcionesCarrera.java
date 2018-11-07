@@ -17,19 +17,21 @@ public class InscripcionesCarrera implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(unique=true, nullable=false)
 	private Integer identificador;
 
 	@Temporal(TemporalType.DATE)
+	@Column(nullable=false)
 	private Date fechainscripcion;
 
-	//uni-directional many-to-one association to Alumno
-	@ManyToOne
-	@JoinColumn(name="idalumno")
+	//bi-directional many-to-one association to Alumno
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="idalumno", nullable=false)
 	private Alumno alumno;
 
-	//uni-directional many-to-one association to Carrera
-	@ManyToOne
-	@JoinColumn(name="idcarrera")
+	//bi-directional many-to-one association to Carrera
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="idcarrera", nullable=false)
 	private Carrera carrera;
 
 	public InscripcionesCarrera() {

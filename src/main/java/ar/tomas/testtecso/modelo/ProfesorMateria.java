@@ -16,13 +16,17 @@ public class ProfesorMateria implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(unique=true, nullable=false)
 	private Integer identificador;
 
-	private Integer idmateria;
+	//bi-directional one-to-one association to Curso
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="idmateria", nullable=false)
+	private Curso curso;
 
-	//uni-directional one-to-one association to Profesor
-	@OneToOne
-	@JoinColumn(name="idprofesor")
+	//bi-directional one-to-one association to Profesor
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="idprofesor", nullable=false)
 	private Profesor profesor;
 
 	public ProfesorMateria() {
@@ -36,12 +40,12 @@ public class ProfesorMateria implements Serializable {
 		this.identificador = identificador;
 	}
 
-	public Integer getIdmateria() {
-		return this.idmateria;
+	public Curso getCurso() {
+		return this.curso;
 	}
 
-	public void setIdmateria(Integer idmateria) {
-		this.idmateria = idmateria;
+	public void setCurso(Curso curso) {
+		this.curso = curso;
 	}
 
 	public Profesor getProfesor() {

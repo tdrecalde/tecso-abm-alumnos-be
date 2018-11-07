@@ -329,7 +329,7 @@ module.exports = "#datosAlumnos{\r\n    min-height: 600px;\r\n}\r\n.etiqueta{\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" id=\"datosAlumnos\">\r\n  <div *ngIf=\"alumno\">\r\n    <div class=\"row\">\r\n      <div class=\"col-4\">\r\n        <span class=\"etiqueta\">Legajo: </span><span class=\"valorEtiqueta\">{{alumno.legajo |async}}</span>\r\n      </div>\r\n      <div class=\"col-4\">\r\n        <span class=\"etiqueta\">Documento: </span><span class=\"valorEtiqueta\">{{alumno.persona.tipodoc |\r\n          async}}:{{alumno.persona.documento}}</span>\r\n      </div>\r\n      <div class=\"col-4\">\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-4\">\r\n        <span class=\"etiqueta\">Nombre: </span><span class=\"valorEtiqueta\">{{alumno.persona.nombre | async}}</span>\r\n      </div>\r\n      <div class=\"col-4\">\r\n        <span class=\"etiqueta\">Apellido: </span><span class=\"valorEtiqueta\">{{alumno.persona.apellido | async}}</span>\r\n      </div>\r\n      <div class=\"col-4\">\r\n        <span class=\"etiqueta\">Direcci�n: </span><span class=\"valorEtiqueta\"> {{alumno.persona.direccion | async}}</span>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-4\">\r\n        <span class=\"etiqueta\">Fecha de nacimiento: </span><span class=\"valorEtiqueta\">{{alumno.persona.fechanac |\r\n          async | date }}</span>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"container\" id=\"datosAlumnos\">\r\n  <div *ngIf=\"alumno\">\r\n    <div class=\"row\">\r\n      <div class=\"col-4\">\r\n        <span class=\"etiqueta\">Legajo: </span><span class=\"valorEtiqueta\">{{alumno.legajo}}</span>\r\n      </div>\r\n      <div class=\"col-4\">\r\n        <span class=\"etiqueta\">Documento: </span><span class=\"valorEtiqueta\">{{alumno.persona.tipodoc}}:{{alumno.persona.documento}}</span>\r\n      </div>\r\n      <div class=\"col-4\">\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-4\">\r\n        <span class=\"etiqueta\">Nombre: </span><span class=\"valorEtiqueta\">{{alumno.persona.nombre}}</span>\r\n      </div>\r\n      <div class=\"col-4\">\r\n        <span class=\"etiqueta\">Apellido: </span><span class=\"valorEtiqueta\">{{alumno.persona.apellido}}</span>\r\n      </div>\r\n      <div class=\"col-4\">\r\n        <span class=\"etiqueta\">Direcci�n: </span><span class=\"valorEtiqueta\"> {{alumno.persona.direccion}}</span>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-4\">\r\n        <span class=\"etiqueta\">Fecha de nacimiento: </span><span class=\"valorEtiqueta\">{{alumno.persona.fechanac | date }}</span>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -946,7 +946,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\Trabajo\TECSO\ejercicio-3\workspace-java\web-test\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! e:\Trabajo\TECSO\ejercicio-3\workspace-java\web-test\src\main.ts */"./src/main.ts");
 
 
 /***/ })

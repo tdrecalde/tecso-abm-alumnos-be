@@ -10,26 +10,38 @@ import java.util.Date;
  * 
  */
 @Entity
+@Table(name="persona")
 @NamedQuery(name="Persona.findAll", query="SELECT p FROM Persona p")
 public class Persona implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(unique=true, nullable=false)
 	private Integer identificador;
 
+	@Column(nullable=false, length=40)
 	private String apellido;
 
+	@Column(length=200)
 	private String direccion;
 
+	@Column(nullable=false)
 	private Long documento;
 
 	@Temporal(TemporalType.DATE)
+	@Column(nullable=false)
 	private Date fechanac;
 
+	@Column(nullable=false, length=40)
 	private String nombre;
 
+	@Column(nullable=false, length=5)
 	private String tipodoc;
+
+	//bi-directional one-to-one association to Alumno
+	@OneToOne(mappedBy="persona", fetch=FetchType.LAZY)
+	private Alumno alumno;
 
 	public Persona() {
 	}
@@ -88,6 +100,14 @@ public class Persona implements Serializable {
 
 	public void setTipodoc(String tipodoc) {
 		this.tipodoc = tipodoc;
+	}
+
+	public Alumno getAlumno() {
+		return this.alumno;
+	}
+
+	public void setAlumno(Alumno alumno) {
+		this.alumno = alumno;
 	}
 
 }

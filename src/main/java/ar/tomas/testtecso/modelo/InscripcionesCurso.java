@@ -17,18 +17,23 @@ public class InscripcionesCurso implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(unique=true, nullable=false)
 	private Integer identificador;
 
 	private Boolean aprobado;
 
 	@Temporal(TemporalType.DATE)
+	@Column(nullable=false)
 	private Date fechainscripcion;
 
-	private Integer idalumno;
+	//bi-directional many-to-one association to Alumno
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="idalumno", nullable=false)
+	private Alumno alumno;
 
-	//uni-directional many-to-one association to Curso
-	@ManyToOne
-	@JoinColumn(name="idcurso")
+	//bi-directional many-to-one association to Curso
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="idcurso", nullable=false)
 	private Curso curso;
 
 	public InscripcionesCurso() {
@@ -58,12 +63,12 @@ public class InscripcionesCurso implements Serializable {
 		this.fechainscripcion = fechainscripcion;
 	}
 
-	public Integer getIdalumno() {
-		return this.idalumno;
+	public Alumno getAlumno() {
+		return this.alumno;
 	}
 
-	public void setIdalumno(Integer idalumno) {
-		this.idalumno = idalumno;
+	public void setAlumno(Alumno alumno) {
+		this.alumno = alumno;
 	}
 
 	public Curso getCurso() {
